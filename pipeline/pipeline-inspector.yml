@@ -10,7 +10,7 @@ spec:
   source:
     type: "Git"
     git:
-      uri: "https://github.com/samueltauil/openscap-openshift.git"
+      uri: "https://github.com/wilsonchoi1/openscap-openshift.git"
   strategy:
     type: JenkinsPipeline
     jenkinsPipelineStrategy:
