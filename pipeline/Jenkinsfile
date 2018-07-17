@@ -3,7 +3,7 @@ node {
   openshiftBuild(namespace: '', buildConfig: 'php-oci8', showBuildLogs: 'true')
   stage 'execute image scan'
     openshift.withCluster() {
-	def models = openshift.process( "openshift//image-inspector-template", "-p", "APPLICATION_NAME=image-inspector", "-p", "test/php-oci8:latest")
+	def models = openshift.process( "openshift//image-inspector-template", "-p", "APPLICATION_NAME=image-inspector", "-p", "docker.registry.default:5000/test/php-oci8:latest")
         echo "Creating this template will instantiate ${models.size()} objects"
         def created = openshift.create( models )
         echo "Application created"
